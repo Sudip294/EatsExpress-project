@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EatsExpress</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Home.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+
+                <a class="navbar-brand">EatsExpress</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="Home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="About.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Restaurant.html">Restaurant</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Contact Us.html">Contact Us</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center">
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link login-link" data-bs-toggle="modal"
+                                    data-bs-target="#loginModal">Log In</a>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="loginModalLabel">Login to EatsExpress
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="mb-3">
+                                                        <label for="loginEmail" class="form-label">Email address</label>
+                                                        <input type="email" class="form-control" id="loginEmail"
+                                                            placeholder="Enter your email">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="loginPassword" class="form-label">Password</label>
+                                                        <input type="password" class="form-control" id="loginPassword"
+                                                            placeholder="Enter your password">
+                                                    </div>
+                                                    <div class="mb-3 form-check">
+                                                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                                                        <label class="form-check-label" for="rememberMe">Remember
+                                                            me</label>
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                                                </form>
+                                                <div class="text-center mt-3">
+                                                    <a href="#" class="text-decoration-none">Forgot Password?</a>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <p class="me-auto">Don't have an account? <a href="#"
+                                                        class="text-decoration-none">Sign Up</a></p>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- sign up -->
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link signup-link" data-bs-toggle="modal"
+                                    data-bs-target="#signupModal">Sign Up</a>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="signupModal" tabindex="-1"
+                                    aria-labelledby="signupModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="signupModalLabel">Create an Account
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="mb-3">
+                                                        <label for="signupName" class="form-label">Full Name</label>
+                                                        <input type="text" class="form-control" id="signupName"
+                                                            placeholder="Enter your full name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="signupEmail" class="form-label">Email
+                                                            address</label>
+                                                        <input type="email" class="form-control" id="signupEmail"
+                                                            placeholder="Enter your email">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="signupPassword" class="form-label">Password</label>
+                                                        <input type="password" class="form-control" id="signupPassword"
+                                                            placeholder="Create a password">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="signupConfirmPassword" class="form-label">Confirm
+                                                            Password</label>
+                                                        <input type="password" class="form-control"
+                                                            id="signupConfirmPassword"
+                                                            placeholder="Confirm your password">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <p class="me-auto">Already have an account? <a href="#"
+                                                        class="text-decoration-none" data-bs-toggle="modal"
+                                                        data-bs-target="#loginModal">Log In</a></p>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                        <!-- icon -->
+                        <img src="admin_icon.png" alt="Logo" class="ms-3 rounded-circle d-none d-lg-block"
+                            style="height: 30px;">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel"
+            data-bs-interval="5000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="meals.jpg" class="d-block w-100" alt="meals">
+                    <div class="carousel-caption centered-caption">
+                        <h1>EatsExpress</h1>
+                        <h3>Discover the best food & drinks.</h3>
+                        <div class="search-bar">
+                            <div class="location">
+                                <i class="fa-solid fa-location-dot" id="locationlogo"></i>
+                                <div class="dropdown-center" id="dropdown">
+                                    <button class="btn btn-light dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false" id="dropdownbtn">
+                                        Mumbai
+                                    </button>
+                                    <ul class="dropdown-menu mt-2">
+                                        <li><a class="dropdown-item" href="#">Vasai-Virar</a></li>
+                                        <li><a class="dropdown-item" href="#">Thane</a></li>
+                                        <li><a class="dropdown-item" href="#">Others</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 d-flex align-items-center" id="searchcont">
+                                <i class="fas fa-search text-muted" id="searchlogo"></i>
+                                <input type="text" placeholder="Search for restaurant, cuisine or a dish"
+                                    class="form-control" id="searchinput">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="drinks.jpg" class="d-block w-100" alt="drinks">
+                    <div class="carousel-caption centered-caption">
+                        <h1>EatsExpress</h1>
+                        <h3>From handcrafted cocktails to refreshing beverages, we've got the perfect drink for every
+                            occasion.</h3>
+                        <div class="search-bar">
+                            <div class="location">
+                                <i class="fa-solid fa-location-dot" id="locationlogo"></i>
+                                <div class="dropdown-center" id="dropdown">
+                                    <button class="btn btn-light dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false" id="dropdownbtn">
+                                        Mumbai
+                                    </button>
+                                    <ul class="dropdown-menu mt-2">
+                                        <li><a class="dropdown-item" href="#">Vasai-Virar</a></li>
+                                        <li><a class="dropdown-item" href="#">Thane</a></li>
+                                        <li><a class="dropdown-item" href="#">Others</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 d-flex align-items-center" id="searchcont">
+                                <i class="fas fa-search text-muted" id="searchlogo"></i>
+                                <input type="text" placeholder="Search for restaurant, cuisine or a dish"
+                                    class="form-control" id="searchinput">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="burger.jpg" class="d-block w-100" alt="burger">
+                    <div class="carousel-caption centered-caption">
+                        <h1>EatsExpress</h1>
+                        <h3>Experience exciting new tastes and creative dishes designed to delight and surprise your
+                            palate.</h3>
+                        <div class="search-bar">
+                            <div class="location">
+                                <i class="fa-solid fa-location-dot" id="locationlogo"></i>
+                                <div class="dropdown-center" id="dropdown">
+                                    <button class="btn btn-light dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false" id="dropdownbtn">
+                                        Mumbai
+                                    </button>
+                                    <ul class="dropdown-menu mt-2">
+                                        <li><a class="dropdown-item" href="#">Vasai-Virar</a></li>
+                                        <li><a class="dropdown-item" href="#">Thane</a></li>
+                                        <li><a class="dropdown-item" href="#">Others</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 d-flex align-items-center" id="searchcont">
+                                <i class="fas fa-search text-muted" id="searchlogo"></i>
+                                <input type="text" placeholder="Search for restaurant, cuisine or a dish"
+                                    class="form-control" id="searchinput">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- features section -->
+
+        <div class="features">
+
+            <div class="row row-cols-1 row-cols-md-3 g-4" id="cardcont">
+
+                <div class="col" id="card">
+                    <div class="card h-100">
+                        <img src="order online.jpg" class="card-img-top" alt="Order Online">
+                        <div class="card-body">
+                            <h5 class="card-title">Order Online</h5>
+                            <p class="card-text">Stay home and order to your doorstep</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" id="card">
+                    <div class="card h-100">
+                        <img src="dining.jpg" class="card-img-top" alt="Dining">
+                        <div class="card-body">
+                            <h5 class="card-title">Dining</h5>
+                            <p class="card-text">View the city's favourite dining venues</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" id="card">
+                    <div class="card h-100">
+                        <img src="live events.jpg" class="card-img-top" alt="Live Events">
+                        <div class="card-body">
+                            <h5 class="card-title">Live Events</h5>
+                            <p class="card-text">Discover India's best events & concerts</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" id="card">
+                    <div class="card h-100">
+                        <img src="drinks&bev.jpg" class="card-img-top" alt="Drinks&Beverages">
+                        <div class="card-body">
+                            <h5 class="card-title">Drinks&Beverages</h5>
+                            <p class="card-text">Explore a variety of refreshing beverages and curated drinks for every
+                                mood and occasion</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" id="card">
+                    <div class="card h-100">
+                        <img src="dessert.jpg" class="card-img-top" alt="Dessert">
+                        <div class="card-body">
+                            <h5 class="card-title">Dessert Delight</h5>
+                            <p class="card-text">ndulge in a delightful assortment of sweet treats and heavenly desserts
+                                to satisfy your cravings</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" id="card">
+                    <div class="card h-100">
+                        <img src="veg&nonveg.jpg" class="card-img-top" alt="Veg&Non-Veg Platter">
+                        <div class="card-body">
+                            <h5 class="card-title">Veg&Non-Veg Platter</h5>
+                            <p class="card-text">Savor the perfect balance of flavors with our carefully crafted veg and
+                                non-veg platters, ideal for every gathering</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- location sector -->
+
+        <div class="container my-5">
+            <h2 class="fw-bold mb-4">
+                Popular localities in and around <span class="text-primary">Mumbai</span>
+            </h2>
+
+            <div class="row g-3">
+                <!-- Card 1 -->
+                <div class="col-12 col-md-4">
+                    <div class="p-3 locality-card">
+                        <h5 class="mb-1">Lower Parel</h5>
+                        <p class="places mb-0">490 places</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-12 col-md-4">
+                    <div class="p-3 locality-card">
+                        <h5 class="mb-1">Powai</h5>
+                        <p class="places mb-0">439 places</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-12 col-md-4">
+                    <div class="p-3 locality-card">
+                        <h5 class="mb-1">Malad West</h5>
+                        <p class="places mb-0">957 places</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-12 col-md-4">
+                    <div class="p-3 locality-card">
+                        <h5 class="mb-1">Borivali West</h5>
+                        <p class="places mb-0">684 places</p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="col-12 col-md-4">
+                    <div class="p-3 locality-card">
+                        <h5 class="mb-1">Bandra Kurla Complex</h5>
+                        <p class="places mb-0">159 places</p>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="col-12 col-md-4">
+                    <div class="p-3 locality-card">
+                        <h5 class="mb-1">Vashi</h5>
+                        <p class="places mb-0">664 places</p>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="col-12 col-md-4">
+                    <div class="p-3 locality-card">
+                        <h5 class="mb-1">Fort</h5>
+                        <p class="places mb-0">289 places</p>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="col-12 col-md-4">
+                    <div class="p-3 locality-card">
+                        <h5 class="mb-1">Juhu</h5>
+                        <p class="places mb-0">249 places</p>
+                    </div>
+                </div>
+
+                <!-- See More Card -->
+                <div class="col-12 col-md-4">
+                    <div class="p-3 locality-card see-more">
+                        <h5 class="mb-0">see more <span>&#9660;</span></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- newsletter section-->
+
+        <section class="py-5 bg-light-subtle" data-cue="fadeIn" data-show="true"
+            style="animation-name: fadeIn; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms; animation-direction: 
+            normal; animation-fill-mode: both; background-color: rgba(250, 188, 56, 0.4)!important; box-shadow:0 2px 15px rgba(0, 0, 0, 0.9);">
+            <div class="container my-lg-7" data-cues="zoomIn" data-disabled="true">
+                <div class="row justify-content-center text-center" data-cue="zoomIn" data-show="true"
+                    style="animation-name: zoomIn; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms; animation-direction: normal; animation-fill-mode: both;">
+                    <div class="col-lg-6 col-md-9 col-12 d-flex flex-column gap-4">
+                        <div>
+                            <a class="navbar-brand" style="font-size: 32px;">EatsExpress</a>
+                        </div>
+                        <div>
+                            <h2 class="fs-1">Subscribe to our newsletter</h2>
+                            <p class="mb-0">Sign up now to get tasty discounts, exciting offers, and updates on the
+                                newest restaurants and meals delivered fresh to your inbox.</p>
+                        </div>
+                        <div>
+                            <form class="row g-2 d-flex mx-lg-7">
+                                <div class="col-md-9 col-12">
+                                    <label for="notificationEmail" class="visually-hidden"></label>
+                                    <input type="email" id="notificationEmail" class="form-control" name="EMAIL"
+                                        placeholder="Email" required="">
+                                    <div class="invalid-feedback text-start">Email.</div>
+                                </div>
+                                <div class="col-md-3 col-12">
+                                    <div class="d-grid">
+                                        <button class="btn btn-dark" type="submit" name="subscribe">Subscribe</button>
+                                    </div>
+                                </div>
+                                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
+                                <div style="position: absolute; left: -5000px" aria-hidden="true">
+                                    <input class="subscription-form-antispam" type="text"
+                                        name="b_b838b4eb099ebf09c3407db0f_b01fb647c7" tabindex="-1">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer style="background-color: rgb(178, 175, 175);">
+        <div class="container">
+            <footer class="py-5">
+                <div class="row" id="footbox1">
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5>About EatsExpress</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="About.html" class="nav-link p-0 text-body-secondary">Who We
+                                    Are</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Blog</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Report
+                                    Fraud</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Work With
+                                    Us</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5>For Restaurants</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Partner With
+                                    Us</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Apps For
+                                    You</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">listing</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="Restaurant.html" class="nav-link p-0 text-body-secondary">Find
+                                    Location</a></li>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5>Learn More</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="https://policies.google.com/privacy?hl=en-US" class="nav-link p-0 text-body-secondary">Privacy</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Security</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="https://policies.google.com/terms?hl=en-US" class="nav-link p-0 text-body-secondary">Terms</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-5 offset-md-1 mb-3">
+                        <a class="navbar-brand" style="font-size: 26px;"><h2>EatsExpress</h2></a>
+                        <p class="text-body-secondary"><h5>App available on</h5></p>
+                        <div class="d-flex">
+                            <a href="https://play.google.com/store/games?hl=en" class="me-2" id="app">
+                                <img src="google-play.jpg" alt="Get it on Google Play" style="width: 150px; height: 50px;border-radius:10px;">
+                            </a>
+                            <a href="https://apps.apple.com/bj/developer/apple/id284417353?mt=12" id="app">
+                                <img src="app-store.jpg" alt="Download on the App Store" style="width: 150px; height: 50px;border-radius:10px">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                    <div class="small mb-3 mb-lg-0 text-lg-center">
+                        Copyright © 2024
+
+                        <span class="text-primary"><a href="#"
+                                style="text-decoration: none;">EatsExpress.Pvt.Ltd</a></span>
+                        All rights reserved. | Designed by
+                        <span class="text-primary"><a href="#" style="text-decoration: none;">Sudip Bag</a></span>
+                    </div>
+                    <ul class="list-unstyled d-flex">
+                        <li class="ms-3"><a class="link-body-emphasis" href="https://x.com/?lang=en">
+                                <div class="bi" width="24" height="24"><i class="fa-brands fa-x-twitter"></i></div>
+                            </a></li>
+                        <li class="ms-3"><a class="link-body-emphasis" href="https://www.instagram.com/instagram/?hl=en">
+                                <div class="bi" width="24" height="24"><i class="fa-brands fa-instagram"></i></div>
+                            </a></li>
+                        <li class="ms-3"><a class="link-body-emphasis" href="https://www.facebook.com/marketplace/">
+                                <div class="bi" width="24" height="24"><i class="fa-brands fa-facebook"></i></div>
+                            </a></li>
+                        <li class="ms-3"><a class="link-body-emphasis" href="https://www.youtube.com/feed/trending?bp=6gQJRkVleHBsb3Jl">
+                                <div class="bi" width="24" height="24"><i class="fa-brands fa-youtube"></i></div>
+                            </a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+
+
+</body>
+
+</html>

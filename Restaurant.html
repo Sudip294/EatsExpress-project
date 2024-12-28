@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant-EatsExpress</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Home.css">
+    <style>
+        #colcard {
+            padding: 0.5rem;
+            animation: zoomIn 1s ease forwards;
+
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                /* Adjust scale as needed */
+                opacity: 1;
+                /* Optional: fade effect */
+            }
+        }
+
+        .restaurant-section {
+            background-color: #f8f9fa;
+            /* Light background for contrast */
+        }
+
+        .restaurant-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .restaurant-card:hover {
+            transform: translateY(-10px);
+            /* Lift effect on hover */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            /* Shadow effect */
+        }
+
+        .restaurant-card img {
+            height: 200px;
+            /* Fixed height for images */
+            object-fit: cover;
+            /* Cover the area without distortion */
+        }
+
+        h2 {
+            animation: fadeIn 1s ease-in-out;
+            /* Fade-in animation for the heading */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        #rating {
+            margin-bottom: 0rem !important;
+        }
+
+        /* Top Dishes Section */
+        .top-dishes-section .col {
+            padding: 0.5rem;
+        }
+
+        .top-dishes-section .card {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .top-dishes-section .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Customer Reviews Section */
+        .reviews-section .rev {
+            padding: 0.5rem;
+        }
+
+        .reviews-section .card {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .reviews-section .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .reviews-section .card:hover img {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+        }
+
+        /* Events & Offers Section */
+        .events-offers-section .evt {
+            padding: 0.5rem;
+        }
+
+        .events-offers-section .card {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .events-offers-section .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        /* FAQs Section */
+        .faqs-section .accordion-button {
+            transition: background-color 0.3s ease;
+        }
+
+        .faqs-section .accordion-button:hover {
+            background-color: #e9ecef;
+            /* Light background on hover */
+        }
+
+        /* Animation for Sections */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .top-dishes-section,
+        .reviews-section,
+        .events-offers-section,
+        .faqs-section {
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        /* Add a delay for each section */
+        .top-dishes-section {
+            animation-delay: 0.2s;
+        }
+
+        .reviews-section {
+            animation-delay: 0.4s;
+        }
+
+        .events-offers-section {
+            animation-delay: 0.6s;
+        }
+
+        .faqs-section {
+            animation-delay: 0.8s;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+
+                <a class="navbar-brand">EatsExpress</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="Home.html">Home</a>
+                        <li class="nav-item">
+                        </li>
+                        <a class="nav-link " href="About.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="Restaurant.html">Restaurant</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Contact Us.html">Contact Us</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center">
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link login-link" data-bs-toggle="modal"
+                                    data-bs-target="#loginModal">Log In</a>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="loginModalLabel">Login to EatsExpress
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="mb-3">
+                                                        <label for="loginEmail" class="form-label">Email address</label>
+                                                        <input type="email" class="form-control" id="loginEmail"
+                                                            placeholder="Enter your email">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="loginPassword" class="form-label">Password</label>
+                                                        <input type="password" class="form-control" id="loginPassword"
+                                                            placeholder="Enter your password">
+                                                    </div>
+                                                    <div class="mb-3 form-check">
+                                                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                                                        <label class="form-check-label" for="rememberMe">Remember
+                                                            me</label>
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                                                </form>
+                                                <div class="text-center mt-3">
+                                                    <a href="#" class="text-decoration-none">Forgot Password?</a>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <p class="me-auto">Don't have an account? <a href="#"
+                                                        class="text-decoration-none">Sign Up</a></p>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- sign up -->
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link signup-link" data-bs-toggle="modal"
+                                    data-bs-target="#signupModal">Sign Up</a>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="signupModal" tabindex="-1"
+                                    aria-labelledby="signupModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="signupModalLabel">Create an Account
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="mb-3">
+                                                        <label for="signupName" class="form-label">Full Name</label>
+                                                        <input type="text" class="form-control" id="signupName"
+                                                            placeholder="Enter your full name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="signupEmail" class="form-label">Email
+                                                            address</label>
+                                                        <input type="email" class="form-control" id="signupEmail"
+                                                            placeholder="Enter your email">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="signupPassword" class="form-label">Password</label>
+                                                        <input type="password" class="form-control" id="signupPassword"
+                                                            placeholder="Create a password">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="signupConfirmPassword" class="form-label">Confirm
+                                                            Password</label>
+                                                        <input type="password" class="form-control"
+                                                            id="signupConfirmPassword"
+                                                            placeholder="Confirm your password">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <p class="me-auto">Already have an account? <a href="#"
+                                                        class="text-decoration-none" data-bs-toggle="modal"
+                                                        data-bs-target="#loginModal">Log In</a></p>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <!-- icon -->
+                        <img src="admin_icon.png" alt="Logo" class="ms-3 rounded-circle d-none d-lg-block"
+                            style="height: 30px;">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- main -->
+
+    <!-- Restaurant Section -->
+    <section class="restaurant-section py-5" style="background-color: #f5f5dc;">
+        <div class="container pt-3">
+            <h2 class="text-center my-2">Featured Restaurants</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-2">
+
+                <!-- Restaurant Cards -->
+                <div class="col" id="colcard">
+                    <div class="card h-100 restaurant-card">
+                        <img src="spice.jpg" class="card-img-top" alt="The Spice Route">
+                        <div class="card-body">
+                            <h5 class="card-title">The Spice Route</h5>
+                            <p class="card-text">Authentic Indian Cuisine</p>
+                            <p class="card-text" id="rating"><strong>Rating:</strong> ★★★★☆</p>
+                            <p class="card-text"><strong>Location:</strong> New Delhi, India</p>
+                            <a href="#" class="btn btn-primary">View Menu</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" id="colcard">
+                    <div class="card h-100 restaurant-card">
+                        <img src="sushi.jpg" class="card-img-top" alt="Sushi Haven">
+                        <div class="card-body">
+                            <h5 class="card-title">Zen Sushi House</h5>
+                            <p class="card-text">Fresh Sushi & Japanese Delicacies</p>
+                            <p class="card-text" id="rating"><strong>Rating:</strong> ★★★★★</p>
+                            <p class="card-text"><strong>Location:</strong> Mumbai, India</p>
+                            <a href="#" class="btn btn-primary">View Menu</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" id="colcard">
+                    <div class="card h-100 restaurant-card">
+                        <img src="pasta.jpg" class="card-img-top" alt="Pasta Paradise">
+                        <div class="card-body">
+                            <h5 class="card-title">Trattoria Bella</h5>
+                            <p class="card-text">Italian Pasta & More</p>
+                            <p class="card-text" id="rating"><strong>Rating:</strong> ★★★★☆</p>
+                            <p class="card-text"><strong>Location:</strong> Bangalore, India</p>
+                            <a href="#" class="btn btn-primary">View Menu</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" id="colcard">
+                    <div class="card h-100 restaurant-card">
+                        <img src="burgerbliss.jpg" class="card-img-top" alt="Burger Bliss">
+                        <div class="card-body">
+                            <h5 class="card-title">Burger Bliss</h5>
+                            <p class="card-text">Juicy Burgers & Sides</p>
+                            <p class="card-text" id="rating"><strong>Rating:</strong> ★★★☆☆</p>
+                            <p class="card-text"><strong>Location:</strong> Hyderabad, India</p>
+                            <a href="#" class="btn btn-primary">View Menu</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" id="colcard">
+                    <div class="card h-100 restaurant-card">
+                        <img src="tacos.jpg" class="card-img-top" alt="Taco Fiesta">
+                        <div class="card-body">
+                            <h5 class="card-title">El Rancho Mexicano</h5>
+                            <p class="card-text">Mexican Street Tacos</p>
+                            <p class="card-text" id="rating"><strong>Rating:</strong> ★★★★☆</p>
+                            <p class="card-text"><strong>Location:</strong> Pune, India</p>
+                            <a href="#" class="btn btn-primary">View Menu</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" id="colcard">
+                    <div class="card h-100 restaurant-card">
+                        <img src="cafe&dess.jpg" class="card-img-top" alt="Cafe Delight">
+                        <div class="card-body">
+                            <h5 class="card-title">Cafe Delight</h5>
+                            <p class="card-text">Coffee & Desserts</p>
+                            <p class="card-text" id="rating"><strong>Rating:</strong> ★★★★★</p>
+                            <p class="card-text"><strong>Location:</strong> Jaipur, India</p>
+                            <a href="#" class="btn btn-primary">View Menu</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" id="colcard">
+                    <div class="card h-100 restaurant-card">
+                        <img src="steak.jpg" class="card-img-top" alt="Steakhouse Elite">
+                        <div class="card-body">
+                            <h5 class="card-title">Steakhouse Elite</h5>
+                            <p class="card-text">Premium Steaks & Grills</p>
+                            <p class="card-text" id="rating"><strong>Rating:</strong> ★★★★☆</p>
+                            <p class="card-text"><strong>Location:</strong> Kolkata, India</p>
+                            <a href="#" class="btn btn-primary">View Menu</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" id="colcard">
+                    <div class="card h-100 restaurant-card">
+                        <img src="vegan.jpg" class="card-img-top" alt="Vegan Valley">
+                        <div class="card-body">
+                            <h5 class="card-title">Vegan Valley</h5>
+                            <p class="card-text">Plant-Based Goodness</p>
+                            <p class="card-text" id="rating"><strong>Rating:</strong> ★★★☆☆</p>
+                            <p class="card-text"><strong>Location:</strong> Chennai, India</p>
+                            <a href="#" class="btn btn-primary">View Menu</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" id="colcard">
+                    <div class="card h-100 restaurant-card">
+                        <img src="seafood.jpg" class="card-img-top" alt="Seafood Shack">
+                        <div class="card-body">
+                            <h5 class="card-title">The Ocean’s Pantry</h5>
+                            <p class="card-text">Fresh Seafood & More</p>
+                            <p class="card-text" id="rating"><strong>Rating:</strong> ★★★★☆</p>
+                            <p class="card-text"><strong>Location:</strong> Kochi, India</p>
+                            <a href="#" class="btn btn-primary">View Menu</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Dishes Section -->
+    <section class="top-dishes-section py-5 bg-light" style="background-color: #fff8e1 !important;">
+        <div class="container">
+            <h2 class="text-center mb-4">Top Dishes to Try</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="Butter Chicken2.jpg" class="card-img-top" alt="Dish 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Butter Chicken</h5>
+                            <p class="card-text">A creamy and flavorful Indian classic.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="sushi platter.jpg" class="card-img-top" alt="Dish 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Sushi Platter</h5>
+                            <p class="card-text">Freshly prepared sushi rolls with exotic flavors.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="Penne Alfredo.jpg" class="card-img-top" alt="Dish 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Penne Alfredo</h5>
+                            <p class="card-text">Rich and creamy pasta with a hint of garlic.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="tandoori chicken.jpg" class="card-img-top" alt="Dish 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Tandoori Chicken</h5>
+                            <p class="card-text">Juicy and smoky chicken marinated with bold Indian spices.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="Hyderabadi Biryani.jpg" class="card-img-top" alt="Dish 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Hyderabadi Biryani</h5>
+                            <p class="card-text">A fragrant and flavorful rice dish cooked with spices and tender meat.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="Paella Valenciana.jpg" class="card-img-top" alt="Dish 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Paella Valenciana</h5>
+                            <p class="card-text">A Spanish rice dish made with seafood, chicken, and saffron.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="reviews-section py-5" style="background-color: #d8dada;">
+        <div class="container">
+            <h2 class="text-center mb-4">What Our Customers Say</h2>
+            <div class="row">
+                <div class="col-md-4 rev">
+                    <div class="card p-3 text-center  h-100">
+                        <img src="aditi.jpg" alt="Aditi" class="rounded-circle mx-auto mb-3"
+                            style="width: 80px; height: 80px;">
+                        <blockquote class="blockquote text-start">
+                            <p>"Amazing food and wonderful ambiance! Highly recommend."</p>
+                            <footer class="blockquote-footer">Aditi, Mumbai</footer>
+                        </blockquote>
+                        <div class="text-center">
+                            <span style="color: gold;">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 rev">
+                    <div class="card p-3 text-center h-100">
+                        <img src="rohan.jpg" alt="Rohan" class="rounded-circle mx-auto mb-3"
+                            style="width: 80px; height: 80px;">
+                        <blockquote class="blockquote text-start">
+                            <p>"The sushi was so fresh, and the service was top-notch."</p>
+                            <footer class="blockquote-footer">Rohan, Bangalore</footer>
+                        </blockquote>
+                        <div class="text-center">
+                            <span style="color: gold;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 rev">
+                    <div class="card p-3 text-center  h-100">
+                        <img src="neha.jpg" alt="Neha" class="rounded-circle mx-auto mb-3"
+                            style="width: 80px; height: 80px;">
+                        <blockquote class="blockquote text-start">
+                            <p>"A perfect place for family dinners. Will visit again!"</p>
+                            <footer class="blockquote-footer">Neha, Delhi</footer>
+                        </blockquote>
+                        <div class="text-center">
+                            <span style="color: gold;">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Events & Offers Section -->
+    <section class="events-offers-section py-5" style="background-color: #e6ffe6;">
+        <div class="container">
+            <h2 class="text-center mb-4">Upcoming Events & Special Offers</h2>
+            <div class="row">
+                <div class="col-md-6 evt">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Happy Hours</h5>
+                            <p class="card-text">Enjoy up to 50% off on beverages from 5 PM to 8 PM daily.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 evt">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Live Music Night</h5>
+                            <p class="card-text">Join us every Friday for live music performances.</p>
+                            <a href="#" class="btn btn-primary">Book a Table</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="faqs-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            What are your opening hours?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Most restaurants are open from 10:00 AM to 11:00 PM daily.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Do you offer home delivery?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, home delivery is available at all featured restaurants.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            How do I redeem a promo code?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            You can redeem a promo code at checkout by entering it in the designated field. Make sure
+                            it’s valid before proceeding.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            What payment methods do you accept?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            We accept credit/debit cards, digital wallets, and cash on delivery (where applicable).
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Can I schedule an order for later?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, you can schedule orders for a specific time during the restaurant's operating hours.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            What should I do if my order is incorrect?
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            If your order is incorrect, please contact our support team immediately to resolve the
+                            issue.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSeven">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            Are there any delivery fees?
+                        </button>
+                    </h2>
+                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Delivery fees vary depending on the restaurant and your location. The fee will be displayed
+                            at checkout.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+
+    <footer style="background-color: rgb(178, 175, 175);">
+        <div class="container">
+            <footer class="py-5">
+                <div class="row" id="footbox1">
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5>About EatsExpress</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="About.html" class="nav-link p-0 text-body-secondary">Who
+                                    We
+                                    Are</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Blog</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Report
+                                    Fraud</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Work With
+                                    Us</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5>For Restaurants</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Partner With
+                                    Us</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Apps For
+                                    You</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">listing</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="Restaurant.html"
+                                    class="nav-link p-0 text-body-secondary">Find
+                                    Location</a></li>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5>Learn More</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="https://policies.google.com/privacy?hl=en-US"
+                                    class="nav-link p-0 text-body-secondary">Privacy</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Security</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="https://policies.google.com/terms?hl=en-US"
+                                    class="nav-link p-0 text-body-secondary">Terms</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-5 offset-md-1 mb-3">
+                        <a class="navbar-brand" style="font-size: 26px;">
+                            <h2>EatsExpress</h2>
+                        </a>
+                        <p class="text-body-secondary">
+                        <h5>App available on</h5>
+                        </p>
+                        <div class="d-flex">
+                            <a href="https://play.google.com/store/games?hl=en" class="me-2" id="app">
+                                <img src="google-play.jpg" alt="Get it on Google Play"
+                                    style="width: 150px; height: 50px;border-radius:10px;">
+                            </a>
+                            <a href="https://apps.apple.com/bj/developer/apple/id284417353?mt=12" id="app">
+                                <img src="app-store.jpg" alt="Download on the App Store"
+                                    style="width: 150px; height: 50px;border-radius:10px">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                    <div class="small mb-3 mb-lg-0 text-lg-center">
+                        Copyright © 2024
+
+                        <span class="text-primary"><a href="#"
+                                style="text-decoration: none;">EatsExpress.Pvt.Ltd</a></span>
+                        All rights reserved. | Designed by
+                        <span class="text-primary"><a href="#" style="text-decoration: none;">Sudip Bag</a></span>
+                    </div>
+                    <ul class="list-unstyled d-flex">
+                        <li class="ms-3"><a class="link-body-emphasis" href="https://x.com/?lang=en">
+                                <div class="bi" width="24" height="24"><i class="fa-brands fa-x-twitter"></i></div>
+                            </a></li>
+                        <li class="ms-3"><a class="link-body-emphasis"
+                                href="https://www.instagram.com/instagram/?hl=en">
+                                <div class="bi" width="24" height="24"><i class="fa-brands fa-instagram"></i></div>
+                            </a></li>
+                        <li class="ms-3"><a class="link-body-emphasis" href="https://www.facebook.com/marketplace/">
+                                <div class="bi" width="24" height="24"><i class="fa-brands fa-facebook"></i></div>
+                            </a></li>
+                        <li class="ms-3"><a class="link-body-emphasis"
+                                href="https://www.youtube.com/feed/trending?bp=6gQJRkVleHBsb3Jl">
+                                <div class="bi" width="24" height="24"><i class="fa-brands fa-youtube"></i></div>
+                            </a></li>
+                    </ul>
+                </div>
+            </footer>
+
+
+
+
+
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                crossorigin="anonymous"></script>
+</body>
+
+</html>

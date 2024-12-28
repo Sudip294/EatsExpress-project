@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About-EatsExpress</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Home.css">
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    /* about */
+
+    #head1 {
+        animation: slideDown 1s ease forwards !important;
+    }
+
+
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+
+        }
+    }
+
+    #card1 {
+        padding: 1rem;
+        animation: zoomIn 1s ease forwards;
+    }
+
+
+    @keyframes zoomIn {
+        from {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+
+        to {
+            transform: scale(1);
+            /* Adjust scale as needed */
+            opacity: 1;
+            /* Optional: fade effect */
+        }
+    }
+
+    #imgser {
+        height: 40vh;
+    }
+
+    #ser {
+        padding: 1rem;
+    }
+
+    /* service */
+    /* Glowing effect on hover */
+    #ser .card {
+        border: none;
+        /* Remove border */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        /* Default shadow */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* Smooth transition */
+    }
+
+    #ser .card:hover {
+        transform: scale(1.05);
+        /* Slightly enlarge the card on hover */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 8px 30px rgba(255, 17, 0, 0.7);
+        /* Glow effect */
+    }
+
+    /* team  */
+
+    /* General Styles */
+    section.py-5 {
+        background-color: #f9f9f9;
+        /* Light gray background */
+        padding: 5rem 0;
+    }
+
+    h2.fw-bold {
+        color: #333;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    p.text-muted {
+        color: #666;
+        font-size: 1.1rem;
+    }
+
+    /* Team Cards */
+    .card {
+        transition: transform 0.3s, box-shadow 0.3s !important;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+        border: 5px solid #fff;
+        /* Add white border around images */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-title {
+        color: #222;
+        font-size: 1.2rem;
+    }
+
+    .card-text {
+        color: #888;
+        font-size: 0.9rem;
+    }
+
+    /* Join Us Section */
+    #imgser {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        /* margin-top: 3rem; */
+    }
+
+    #imgser h3 {
+        color: #333;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    #imgser p {
+        color: #555;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    #imgser .btn {
+        font-size: 1rem;
+        padding: 0.8rem 2rem;
+        border-radius: 5px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        h2.fw-bold {
+            font-size: 2rem;
+        }
+
+        p.text-muted {
+            font-size: 1rem;
+        }
+
+        #imgser h3 {
+            font-size: 1.5rem;
+        }
+
+        #imgser p {
+            font-size: 0.9rem;
+        }
+
+        #imgser .btn {
+            font-size: 0.9rem;
+            padding: 0.7rem 1.5rem;
+        }
+    }
+
+    /* New media query for 768px to 1024px */
+    @media (min-width: 768px) and (max-width: 1024px) {
+        #imgser {
+            height: 18rem !important;
+            /* Adjust this value as needed */
+        }
+
+        #abtimg {
+            height: 17rem !important;
+            /* Adjust this value as needed */
+        }
+    }
+</style>
+</style>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+
+                <a class="navbar-brand">EatsExpress</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="Home.html">Home</a>
+                        <li class="nav-item">
+                        </li>
+                        <a class="nav-link active" href="About.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Restaurant.html">Restaurant</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Contact Us.html">Contact Us</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center">
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link login-link" data-bs-toggle="modal"
+                                    data-bs-target="#loginModal">Log In</a>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="loginModalLabel">Login to EatsExpress
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="mb-3">
+                                                        <label for="loginEmail" class="form-label">Email address</label>
+                                                        <input type="email" class="form-control" id="loginEmail"
+                                                            placeholder="Enter your email">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="loginPassword" class="form-label">Password</label>
+                                                        <input type="password" class="form-control" id="loginPassword"
+                                                            placeholder="Enter your password">
+                                                    </div>
+                                                    <div class="mb-3 form-check">
+                                                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                                                        <label class="form-check-label" for="rememberMe">Remember
+                                                            me</label>
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                                                </form>
+                                                <div class="text-center mt-3">
+                                                    <a href="#" class="text-decoration-none">Forgot Password?</a>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <p class="me-auto">Don't have an account? <a href="#"
+                                                        class="text-decoration-none">Sign Up</a></p>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- sign up -->
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link signup-link" data-bs-toggle="modal"
+                                    data-bs-target="#signupModal">Sign Up</a>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="signupModal" tabindex="-1"
+                                    aria-labelledby="signupModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="signupModalLabel">Create an Account
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="mb-3">
+                                                        <label for="signupName" class="form-label">Full Name</label>
+                                                        <input type="text" class="form-control" id="signupName"
+                                                            placeholder="Enter your full name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="signupEmail" class="form-label">Email
+                                                            address</label>
+                                                        <input type="email" class="form-control" id="signupEmail"
+                                                            placeholder="Enter your email">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="signupPassword" class="form-label">Password</label>
+                                                        <input type="password" class="form-control" id="signupPassword"
+                                                            placeholder="Create a password">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="signupConfirmPassword" class="form-label">Confirm
+                                                            Password</label>
+                                                        <input type="password" class="form-control"
+                                                            id="signupConfirmPassword"
+                                                            placeholder="Confirm your password">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <p class="me-auto">Already have an account? <a href="#"
+                                                        class="text-decoration-none" data-bs-toggle="modal"
+                                                        data-bs-target="#loginModal">Log In</a></p>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <!-- icon -->
+                        <img src="admin_icon.png" alt="Logo" class="ms-3 rounded-circle d-none d-lg-block"
+                            style="height: 30px;">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- main  -->
+
+    <main>
+        <!-- About Section -->
+        <section class="py-5 bg-light" id="cont">
+            <div class="container">
+                <div class="row justify-content-center text-center" style="padding-top: 2rem;">
+                    <div class="col-lg-8" id="head1">
+                        <h2 class="fw-bold">About EatsExpress</h2>
+                        <p class="text-muted" style="padding-top: 1rem;">At EatsExpress, we are passionate about
+                            connecting people with the best
+                            food and dining experiences. Whether you're craving a quick bite, planning a family dinner,
+                            or exploring new cuisines, we are here to make it happen.</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <!-- Our Mission -->
+                    <div class="col-md-6 col-lg-4" id="card1">
+                        <div class="card h-100 border-0 shadow-sm"
+                            style="box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9)!important;">
+                            <div class="card-body text-center">
+                                <img src="mission.jpg" alt="Our Mission" class="img-fluid mb-3"
+                                    style="width: 100%; height: 30vh;" id="abtimg">
+                                <h5 class="card-title fw-bold">Our Mission</h5>
+                                <p class="card-text text-muted">To bring the joy of food to every doorstep by offering a
+                                    seamless and delightful food delivery experience.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Our Vision -->
+                    <div class="col-md-6 col-lg-4" id="card1">
+                        <div class="card h-100 border-0 shadow-sm"
+                            style="box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9)!important;">
+                            <div class="card-body text-center">
+                                <img src="vision.jpg" alt="Our Vision" class="img-fluid mb-3"
+                                    style="width: 100%; height: 30vh;" id="abtimg">
+                                <h5 class="card-title fw-bold">Our Vision</h5>
+                                <p class="card-text text-muted">To become the most trusted and loved food delivery
+                                    platform, connecting people with the best culinary experiences.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Why Choose Us -->
+                    <div class="col-md-6 col-lg-4" id="card1">
+                        <div class="card h-100 border-0 shadow-sm"
+                            style="box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9)!important;">
+                            <div class="card-body text-center">
+                                <img src="why ch us.jpg" alt="Why Choose Us" class="img-fluid mb-3"
+                                    style="width: 100%; height: 30vh;" id="abtimg">
+                                <h5 class="card-title fw-bold">Why Choose Us</h5>
+                                <p class="card-text text-muted">With a wide range of restaurants, quick delivery, and
+                                    exceptional customer service, we ensure every meal is a memorable one.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Section -->
+        <div class="row my-5">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h2 class="fw-bold">Our Services</h2>
+                </div>
+            </div>
+            <div class="col-md-4 text-center" id="ser">
+                <div class="card">
+                    <img src="qa food.jpg" class="card-img-top" alt="Quality" id="imgser">
+                    <div class="card-body">
+                        <h5 class="card-title">Quality Food</h5>
+                        <p class="card-text">We partner with top-rated restaurants to ensure you receive the best
+                            quality food delivered right to your door.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center" id="ser">
+                <div class="card">
+                    <img src="fast delivery.jpg" class="card-img-top" alt="Fast Delivery" id="imgser">
+                    <div class="card-body">
+                        <h5 class="card-title">Fast Delivery</h5>
+                        <p class="card-text">Our efficient delivery system ensures that your food arrives hot and fresh,
+                            right when you need it.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center" id="ser">
+                <div class="card">
+                    <img src="cu service.jpg" class="card-img-top" alt="Customer Service" id="imgser">
+                    <div class="card-body">
+                        <h5 class="card-title">Customer Service</h5>
+                        <p class="card-text">Our dedicated customer service team is here to assist you with any
+                            questions or concerns you may have.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center text-center mb-5">
+                    <div class="col-lg-8">
+                        <h2 class="fw-bold">Meet Our Team</h2>
+                        <p class="text-muted">Our dedicated team works tirelessly to bring you the best food delivery
+                            experience. Meet the people behind EatsExpress.</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <!-- Team Member 1 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <img src="john.jpg" alt="Team Member" class="card-img-top rounded-circle mx-auto mt-3"
+                                style="width: 120px; height: 120px;">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">John Doe</h5>
+                                <p class="card-text text-muted">Founder & CEO</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <img src="jane.jpg" alt="Team Member" class="card-img-top rounded-circle mx-auto mt-3"
+                                style="width: 120px; height: 120px;">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Jane Smith</h5>
+                                <p class="card-text text-muted">Head of Operations</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <img src="michael.jpg" alt="Team Member" class="card-img-top rounded-circle mx-auto mt-3"
+                                style="width: 120px; height: 120px;">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Michael Brown</h5>
+                                <p class="card-text text-muted">Marketing Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Team Member 4 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <img src="emily.jpg" alt="Team Member" class="card-img-top rounded-circle mx-auto mt-3"
+                                style="width: 120px;">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Emily Davis</h5>
+                                <p class="card-text text-muted">Customer Support Lead</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center" style="padding-top:2rem; margin-top: 3rem;" id="imgser">
+                <h3>Join Us Today!</h3>
+                <p>Experience the best food delivery service in your area. Sign up now and start enjoying delicious
+                    meals delivered to your doorstep!</p>
+                <a href="Home.html" class="btn btn-primary">Get Started</a>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- footer -->
+
+
+    <footer style="background-color: rgb(178, 175, 175);">
+        <div class="container">
+            <footer class="py-5">
+                <div class="row" id="footbox1">
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5>About EatsExpress</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="About.html" class="nav-link p-0 text-body-secondary">Who
+                                    We
+                                    Are</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Blog</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Report
+                                    Fraud</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Work With
+                                    Us</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5>For Restaurants</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Partner With
+                                    Us</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Apps For
+                                    You</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">listing</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="Restaurant.html"
+                                    class="nav-link p-0 text-body-secondary">Find
+                                    Location</a></li>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5>Learn More</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="https://policies.google.com/privacy?hl=en-US"
+                                    class="nav-link p-0 text-body-secondary">Privacy</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Security</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="https://policies.google.com/terms?hl=en-US"
+                                    class="nav-link p-0 text-body-secondary">Terms</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-5 offset-md-1 mb-3">
+                        <a class="navbar-brand" style="font-size: 26px;">
+                            <h2>EatsExpress</h2>
+                        </a>
+                        <p class="text-body-secondary">
+                        <h5>App available on</h5>
+                        </p>
+                        <div class="d-flex">
+                            <a href="https://play.google.com/store/games?hl=en" class="me-2" id="app">
+                                <img src="google-play.jpg" alt="Get it on Google Play"
+                                    style="width: 150px; height: 50px;border-radius:10px;">
+                            </a>
+                            <a href="https://apps.apple.com/bj/developer/apple/id284417353?mt=12" id="app">
+                                <img src="app-store.jpg" alt="Download on the App Store"
+                                    style="width: 150px; height: 50px;border-radius:10px">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                    <div class="small mb-3 mb-lg-0 text-lg-center">
+                        Copyright © 2024
+
+                        <span class="text-primary"><a href="#"
+                                style="text-decoration: none;">EatsExpress.Pvt.Ltd</a></span>
+                        All rights reserved. | Designed by
+                        <span class="text-primary"><a href="#" style="text-decoration: none;">Sudip Bag</a></span>
+                    </div>
+                    <ul class="list-unstyled d-flex">
+                        <li class="ms-3"><a class="link-body-emphasis" href="https://x.com/?lang=en">
+                                <div class="bi" width="24" height="24"><i class="fa-brands fa-x-twitter"></i></div>
+                            </a></li>
+                        <li class="ms-3"><a class="link-body-emphasis"
+                                href="https://www.instagram.com/instagram/?hl=en">
+                                <div class="bi" width="24" height="24"><i class="fa-brands fa-instagram"></i></div>
+                            </a></li>
+                        <li class="ms-3"><a class="link-body-emphasis" href="https://www.facebook.com/marketplace/">
+                                <div class="bi" width="24" height="24"><i class="fa-brands fa-facebook"></i></div>
+                            </a></li>
+                        <li class="ms-3"><a class="link-body-emphasis"
+                                href="https://www.youtube.com/feed/trending?bp=6gQJRkVleHBsb3Jl">
+                                <div class="bi" width="24" height="24"><i class="fa-brands fa-youtube"></i></div>
+                            </a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+
+
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us-EatsExpress</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Home.css">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            /* overflow: hidden; */
+        }
+
+        body {
+            background-color: #f8f9fa;
+            /* overflow-x: hidden; */
+            /* background: url("") no-repeat center/cover; */
+        }
+
+        #conh1 {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact-card {
+            animation: slideIn 1s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .btn-primary {
+            transition: transform 0.2s ease-in-out, background-color 0.3s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .form-control {
+            transition: box-shadow 0.2s ease-in-out;
+        }
+
+        .form-control:focus {
+            box-shadow: 0 0 10px rgb(255, 0, 0);
+        }
+
+        .animated-background {
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(270deg, #ff7e5f, #feb47b, #6a11cb, #bbd4ff);
+            background-size: 400% 400%;
+            animation: gradientAnimation 30s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+       
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+
+                <a class="navbar-brand">EatsExpress</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="Home.html">Home</a>
+                        <li class="nav-item">
+                        </li>
+                        <a class="nav-link " href="About.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="Restaurant.html">Restaurant</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="Contact Us.html">Contact Us</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center">
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link login-link" data-bs-toggle="modal"
+                                    data-bs-target="#loginModal">Log In</a>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="loginModalLabel">Login to EatsExpress
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="mb-3">
+                                                        <label for="loginEmail" class="form-label">Email address</label>
+                                                        <input type="email" class="form-control" id="loginEmail"
+                                                            placeholder="Enter your email">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="loginPassword" class="form-label">Password</label>
+                                                        <input type="password" class="form-control" id="loginPassword"
+                                                            placeholder="Enter your password">
+                                                    </div>
+                                                    <div class="mb-3 form-check">
+                                                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                                                        <label class="form-check-label" for="rememberMe">Remember
+                                                            me</label>
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                                                </form>
+                                                <div class="text-center mt-3">
+                                                    <a href="#" class="text-decoration-none">Forgot Password?</a>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <p class="me-auto">Don't have an account? <a href="#"
+                                                        class="text-decoration-none">Sign Up</a></p>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- sign up -->
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link signup-link" data-bs-toggle="modal"
+                                    data-bs-target="#signupModal">Sign Up</a>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="signupModal" tabindex="-1"
+                                    aria-labelledby="signupModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="signupModalLabel">Create an Account
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="mb-3">
+                                                        <label for="signupName" class="form-label">Full Name</label>
+                                                        <input type="text" class="form-control" id="signupName"
+                                                            placeholder="Enter your full name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="signupEmail" class="form-label">Email
+                                                            address</label>
+                                                        <input type="email" class="form-control" id="signupEmail"
+                                                            placeholder="Enter your email">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="signupPassword" class="form-label">Password</label>
+                                                        <input type="password" class="form-control" id="signupPassword"
+                                                            placeholder="Create a password">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="signupConfirmPassword" class="form-label">Confirm
+                                                            Password</label>
+                                                        <input type="password" class="form-control"
+                                                            id="signupConfirmPassword"
+                                                            placeholder="Confirm your password">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <p class="me-auto">Already have an account? <a href="#"
+                                                        class="text-decoration-none" data-bs-toggle="modal"
+                                                        data-bs-target="#loginModal">Log In</a></p>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <!-- icon -->
+                        <img src="admin_icon.png" alt="Logo" class="ms-3 rounded-circle d-none d-lg-block"
+                            style="height: 30px;">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- main -->
+
+    <main class="container py-5">
+        <h1 class="text-center my-4" id="conh1">Contact Us</h1>
+        <div class="row align-items-center">
+            <div class="col-md-6 contact-card">
+                <div class="p-3 border rounded shadow-sm bg-white animated-background">
+                    <h3>Get in Touch</h3>
+                    <p>If you have any questions, feel free to reach out to us!</p>
+                    <p><strong>Email:</strong> support@eatsexpress.com</p>
+                    <p><strong>Phone:</strong> +91 12345 67890</p>
+                    <p><strong>Office Address:</strong><br>
+                        EatsExpress HQ,<br>
+                        1234 Gourmet Street,<br>
+                        Foodie City, FC 56789, India
+                    </p>
+                    <p><strong>Working Hours:</strong><br>
+                        Monday to Friday: 9:00 AM - 6:00 PM<br>
+                        Saturday: 10:00 AM - 4:00 PM<br>
+                        Sunday: Closed
+                    </p>
+                    <p><strong>Website:</strong> <a href="https://www.eatsexpress.com" target="_blank"
+                            class="text-decoration-none">www.eatsexpress.com</a></p>
+                </div>
+            </div>
+
+
+            <div class="col-md-6 contact-card">
+                <div class="p-4 border rounded shadow-sm bg-white animated-background">
+                    <h3>Feedback Form</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Your message"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Feedback</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+     <!-- footer -->
+
+
+     <footer style="background-color: rgb(178, 175, 175);">
+        <div class="container">
+            <footer class="py-5">
+                <div class="row" id="footbox1">
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5>About EatsExpress</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="About.html" class="nav-link p-0 text-body-secondary">Who
+                                    We
+                                    Are</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Blog</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Report
+                                    Fraud</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Work With
+                                    Us</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5>For Restaurants</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Partner With
+                                    Us</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Apps For
+                                    You</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">listing</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="Restaurant.html"
+                                    class="nav-link p-0 text-body-secondary">Find
+                                    Location</a></li>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5>Learn More</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="https://policies.google.com/privacy?hl=en-US"
+                                    class="nav-link p-0 text-body-secondary">Privacy</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Security</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="https://policies.google.com/terms?hl=en-US"
+                                    class="nav-link p-0 text-body-secondary">Terms</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-5 offset-md-1 mb-3">
+                        <a class="navbar-brand" style="font-size: 26px;">
+                            <h2>EatsExpress</h2>
+                        </a>
+                        <p class="text-body-secondary">
+                        <h5>App available on</h5>
+                        </p>
+                        <div class="d-flex">
+                            <a href="https://play.google.com/store/games?hl=en" class="me-2" id="app">
+                                <img src="google-play.jpg" alt="Get it on Google Play"
+                                    style="width: 150px; height: 50px;border-radius:10px;">
+                            </a>
+                            <a href="https://apps.apple.com/bj/developer/apple/id284417353?mt=12" id="app">
+                                <img src="app-store.jpg" alt="Download on the App Store"
+                                    style="width: 150px; height: 50px;border-radius:10px">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                    <div class="small mb-3 mb-lg-0 text-lg-center">
+                        Copyright © 2024
+
+                        <span class="text-primary"><a href="#"
+                                style="text-decoration: none;">EatsExpress.Pvt.Ltd</a></span>
+                        All rights reserved. | Designed by
+                        <span class="text-primary"><a href="#" style="text-decoration: none;">Sudip Bag</a></span>
+                    </div>
+                    <ul class="list-unstyled d-flex">
+                        <li class="ms-3"><a class="link-body-emphasis" href="https://x.com/?lang=en">
+                                <div class="bi" width="24" height="24"><i class="fa-brands fa-x-twitter"></i></div>
+                            </a></li>
+                        <li class="ms-3"><a class="link-body-emphasis"
+                                href="https://www.instagram.com/instagram/?hl=en">
+                                <div class="bi" width="24" height="24"><i class="fa-brands fa-instagram"></i></div>
+                            </a></li>
+                        <li class="ms-3"><a class="link-body-emphasis" href="https://www.facebook.com/marketplace/">
+                                <div class="bi" width="24" height="24"><i class="fa-brands fa-facebook"></i></div>
+                            </a></li>
+                        <li class="ms-3"><a class="link-body-emphasis"
+                                href="https://www.youtube.com/feed/trending?bp=6gQJRkVleHBsb3Jl">
+                                <div class="bi" width="24" height="24"><i class="fa-brands fa-youtube"></i></div>
+                            </a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

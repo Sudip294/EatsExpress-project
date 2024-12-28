@@ -1,0 +1,359 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+.login-link {
+    color: #0d6efd;
+    font-weight: 500;
+}
+
+.login-link:hover {
+    color: #0d6efd;
+    text-decoration: underline;
+    text-decoration-color: #0d6efd;
+}
+
+
+.signup-link {
+    color: #077107;
+    font-weight: 500;
+}
+
+.signup-link:hover {
+    color: #077107;
+    text-decoration: underline;
+    text-decoration-color: #198754;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+
+.navbar-nav .nav-link:not(.login-link):not(.signup-link)::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:not(.login-link):not(.signup-link):hover::before {
+    width: 100%;
+}
+
+.modal-backdrop {
+    display: none; 
+}
+
+/* Ensure modal has the highest stacking context */
+.modal {
+    z-index: 1; /* Higher than default Bootstrap */
+}
+
+
+
+/* main css */
+
+/*  carousel  */
+
+/* Ensure the carousel has a lower stacking context */
+.carousel {
+    z-index: 0;
+}
+
+#carouselExampleCaptions .carousel-inner .carousel-item img {
+    height: 480px;
+    object-fit: cover;
+}
+
+
+.centered-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style for h1 and h3 text */
+.centered-caption h1,
+.centered-caption h3 {
+    color: rgb(255, 255, 255);
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* Adjust font size for h1 and h3 */
+.centered-caption h1 {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.centered-caption h3 {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .centered-caption h1 {
+        font-size: 2.5rem;
+    }
+
+    .centered-caption h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .centered-caption h1 {
+        font-size: 2rem;
+    }
+
+    .centered-caption h3 {
+        font-size: 1rem;
+    }
+}
+
+/* search bar */
+
+ .search-bar {
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 2rem;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.search-bar .location {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.search-bar .location i {
+    color: #ff5a5f;
+}
+
+.search-bar .location span {
+    margin-left: 5px;
+    color: #4a4a4a;
+}
+
+.search-bar .location i:last-child {
+    margin-left: 5px;
+    color: #9b9b9b;
+}
+
+#searchcont {
+    border-left: 1px solid gray;
+    padding-left: 2rem;
+}
+
+#locationlogo {
+    margin-left: 1.5rem;
+}
+
+#dropdownbtn {
+    margin-left: 0.5rem;
+}
+
+#searchlogo {
+    margin-right: 1rem;
+}
+
+#dropdownbtn {
+    background-color: white;
+}
+
+#dropdownbtn:hover {
+    background-color: white !important;
+    border-color: transparent !important;
+}
+
+/* media queries for search bar */
+
+@media (max-width: 621px) {
+    .search-bar {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        width: 70%;
+        max-width: 600px;
+        margin-top: 2rem;
+        flex-direction: column;
+    }
+    
+    #searchcont {
+        border-left: none;
+        border-top: 1px solid gray;
+        padding-left: 0rem;
+        margin-top: 1rem;
+        width: 100%;
+    }
+    .search-bar input{
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    #searchlogo {
+        margin-right: 0.5rem;
+        margin-left: 10px;
+    }
+    .search-bar input::placeholder {
+        font-size: 0.9rem; /* Slightly smaller */
+    }
+}
+
+/* features */
+
+.features {
+    padding: 2rem 0; /* Adjust horizontal padding */
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem; /* Keeps a consistent gap between rows */
+    width: 100%; /* Ensure the container spans the full width */
+    box-sizing: border-box; /* Includes padding in width calculation */
+}
+
+.row {
+    --bs-gutter-x: 0; /* Removes Bootstrap's horizontal gutter space */
+    margin: 0; /* Removes any default margin */
+    padding: 0; /* Removes default padding */
+    width: 100%; /* Makes the row span the full width */
+}
+
+#cardcont {
+    gap: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+#card {
+    border-radius: 10px;
+    overflow: hidden; /* Ensures child elements respect the border radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.9); /* Adds a subtle shadow */
+    margin: 0; /* Removes any default margin around the card */
+    padding: 0; /* Ensures no extra padding inside the card */
+    width: 30%; /* Card width */
+    transition: transform 0.25s ease-in-out; /* Smooth zoom-out effect */
+}
+
+#card:hover {
+    transform: scale(0.9); /* Shrinks the card on hover */
+}
+
+#card img {
+    width: 100%; /* Ensures the image spans the entire card width */
+    height: 200px; /* Limits the height of the image */
+    object-fit: cover; /* Ensures the image is cropped proportionally */
+    border-radius: 10px 10px 0 0; /* Rounds only the top corners of the image */
+    transition: transform 0.3s ease-in-out; /* Smooth zoom effect for the image */
+}
+
+#card:hover img {
+    transform: scale(1.1); /* Zooms in the image on hover */
+}
+
+/* meqia querirs for card cont */
+
+@media (max-width: 541px){
+
+    #cardcont {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+    }
+
+    #card{
+        width: 80%;
+    }
+
+
+}
+
+/* location section css */
+
+.locality-card {
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.locality-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.locality-card .places {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.see-more {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+
+/* footer */
+
+#app:hover{
+    transform: translateY(-5px);
+}
+
+
+/* footer media queries */
+
+/* @media (max-width: 576px){
+
+    #footbox1{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+       
+    }
+
+} */
+
