@@ -203,6 +203,10 @@
     background-color: white !important;
     border-color: transparent !important;
 }
+#searchinput:focus {
+    outline: none;
+    box-shadow: none;
+}
 
 /* media queries for search bar */
 
@@ -342,6 +346,12 @@
     transform: translateY(-5px);
 }
 
+/* newsletter */
+
+#notificationEmail:focus{
+    outline: none;
+    box-shadow: none;
+}
 
 /* footer media queries */
 
