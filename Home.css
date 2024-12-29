@@ -197,6 +197,7 @@
 
 #dropdownbtn {
     background-color: white;
+    border: none;
 }
 
 #dropdownbtn:hover {
